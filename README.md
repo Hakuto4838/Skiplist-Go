@@ -1,5 +1,28 @@
 # SkipList (Go) 專案
+```mermaid
+graph LR;
+    root["SkipList 專案根目錄"];
 
+    root --> cmd["cmd/（命令列工具）"];
+    root --> skiplist["skiplist/（核心資料結構與變種）"];
+    root --> datastream["datastream/（資料流與測試資料產生）"];
+    root --> saalgo["saalgo/（模擬退火框架）"];
+
+    %% cmd
+    cmd --> cmd_benchrun["cmd/benchrun（benchmark 執行工具）"];
+    cmd --> cmd_genbench["cmd/genbrench（產生 benchmark）"];
+
+    %% skiplist
+    skiplist --> sl_interface["skiplist/interface.go（共用介面）"];
+    skiplist --> sl_basic["各式 skiplist 結構實現"];
+    skiplist --> sl_analyTool["skiplist/analyTool（分析工具）"];
+
+    %% datastream
+    datastream --> ds_gen["genstreamfile / uniformgen / zipfgen（輸入產生）"];
+
+    %% saalgo
+    saalgo --> sa_frame["saframe.go（SA 框架實作）"];
+```
 本專案實作多種跳躍列表（Skip List）與相關分析/基準測試工具，並提供資料流（bench 文件）產生器與比較/分析程式。
 
 **Quick Overview**
